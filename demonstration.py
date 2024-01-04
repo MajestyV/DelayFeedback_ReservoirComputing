@@ -17,6 +17,7 @@ def NARMA10_TEST(N=800, train_cycles=4000, test_cycles=1000, warmup_cycles=100):
 
     # generate NARMA10 Data and split into train and test
     X, Y = generate_NARMA10(warmup_cycles+train_cycles+test_cycles)
+    print(X.shape,Y.shape)
     X_train, Y_train = X[:train_cycles+warmup_cycles], Y[:train_cycles+warmup_cycles]
     X_test, Y_test = X[warmup_cycles+train_cycles:], Y[warmup_cycles+train_cycles:]
 
